@@ -12,7 +12,7 @@ sequenceDiagram
     Client->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     Server-->>Client: HTTP Status code: 302 (Found)
 
-    Note: URL redirection request from the server to the location 'notes'
+    Note left of Browser: URL redirection request from the server to the location 'notes'
 
     Client->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     Server-->>Client: HTTP Status code: 200 (OK)
