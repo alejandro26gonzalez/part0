@@ -1,30 +1,22 @@
 # Mermaid Flowchart Example
 
-This README demonstrates a simple flowchart using Mermaid.
+This README demonstrates the secuence of events for the example app requesting the picture and how the client communicates with the server.
 
 ## Diagram
 
 ```mermaid
-flowchart TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+sequenceDiagram
+    Participant Browser
+    Participant Server
+
+    Browser->>+Server: HTTP GET https://fulstack-exampleapp.herokuapp.com 
+    Server->>-Browser: HTML-code
+    
+    Browser->>+Server: HTTP GET https://fulstack-exampleapp.herojuapp.com/kuva.png
+    Server-->>-Browser: image
+
+    Note left of Browser: Browser displays a page\nwith image embedded
 ```
-
-## Description
-
-- **Christmas** leads to getting money.
-- Then the user goes shopping.
-- A decision is made between:
-  - Buying a Laptop
-  - Buying an iPhone
-  - Buying a Car
-
-## Notes
-
-To render Mermaid diagrams correctly on GitHub:
 
 - Make sure the code block starts with:
 
