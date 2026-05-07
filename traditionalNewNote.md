@@ -14,7 +14,7 @@ sequenceDiagram
     Server-->>Client: HTTP Status code: 302(Found)
 
     Note right of Server: The server requests a URL redirect to /notes
-    Note over Client,Server: Data is sent as the body of the POST request. <br/>Server can access using 'req.body' from the 'req' object
+    Note over Client,Server: Data is sent as the body of the POST request. <br/>Server accesses using 'req.body' from the 'req' object
     Note over Client,Server: Server creates a new note object and adds it to an array called 'notes'
 
     Client->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
@@ -31,7 +31,7 @@ sequenceDiagram
     Client->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
     Server-->>Client: Returns the JSON file with HTTP Status code: 200(OK)
 
-    Note over Client,Server: New notes are not saved in a DB, <br/>new notes dissapear when server restarts
+    Note over Client,Server: New notes are not saved in a DB, <br/>new notes dissappear when server restarts
 
 ```
 
