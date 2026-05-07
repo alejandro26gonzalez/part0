@@ -15,7 +15,7 @@ sequenceDiagram
     Browser->>+Server: HTTP GET https://fulstack-exampleapp.herojuapp.com/kuva.png
     Server-->>-Browser: image
 
-    Note left of Browser: Browser displays a page\nwith image embedded
+    Note left of Browser: Browser displays a page with image embedded
 ```
 
 - Make sure the code block starts with:
