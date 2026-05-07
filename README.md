@@ -1,21 +1,31 @@
 # Mermaid Flowchart Example
 
-This README demonstrates the secuence of events for the example app requesting the picture and how the client communicates with the server.
+This README demonstrates the secuence of events for adding a new note thorugh the form.
 
-## Diagram
+## Diagram of adding a new note
 
 ```mermaid
 sequenceDiagram
-    Participant Browser
-    Participant Server
+    participant Client
+    participant Server
 
-    Browser->>+Server: HTTP GET https://fulstack-exampleapp.herokuapp.com 
-    Server->>-Browser: HTML-code
-    
-    Browser->>+Server: HTTP GET https://fulstack-exampleapp.herojuapp.com/kuva.png
-    Server-->>-Browser: image
+    Client->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Server-->>Client: HTTP Status code: 302 (Found)
 
-    Note left of Browser: Browser displays a page with image embedded
+    Note: URL redirection request from the server to the location 'notes'
+
+    Client->>Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    Server-->>Client: HTTP Status code: 200 (OK)
+
+    Client->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    Server-->>Client: Returns the CSS file along HTTP Status code: 200 (OK)
+
+    Client->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    Server-->>Client: Returns the JS file along HTTP Status code: 200 (OK)
+
+    Client->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    Server->>Client: Returns the JSON file along HTTP Status code: 200(OK)
+
 ```
 
 - Make sure the code block starts with:
